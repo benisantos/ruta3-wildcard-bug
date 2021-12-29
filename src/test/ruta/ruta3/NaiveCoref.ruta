@@ -10,3 +10,5 @@ SW.ct=="himself"{-> CREATE(Person, "name"="BACKREF")};
 
 // p1 is not captured properly (p1 feats are null) because there is other Person (Mary Doe) inside the wildcard.
 p1:Person.name=="John Doe" # Person.name=="BACKREF"{-> LOG("Backref points to: " + p1.ct), SETFEATURE("name", p1.name)};
+
+// UPDATE! If the condition Person.name=="BACKREF" is changed by Person{FEATURE("name", "BACKREF")}, it works! 

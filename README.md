@@ -16,6 +16,8 @@ If there is other annotation of type `MyType` with `featX!="foo"` between t1 and
 
 It works with Ruta 2.6.1 and 2.7.0.
 
+**UPDATE**: If the condition `Person.name=="BACKREF"` is changed by `Person{FEATURE("name", "BACKREF")}`, it works!
+
 
 ## Steps to reproduce the problem
 
