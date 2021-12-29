@@ -1,6 +1,7 @@
 package ruta3;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.nio.file.Files;
@@ -54,6 +55,7 @@ public class NaiveCorefTest {
         // It works in Ruta 2.6.1 and 2.7.0
         for (Person p: peopleIndex) {
             assertNotNull(String.format("Person name of '%s' is null", p.getCoveredText()), p.getName());
+            assertNotEquals(String.format("Person name of '%s' is BACKREF", p.getCoveredText()), "BACKREF", p.getName());
         }
     }
 
