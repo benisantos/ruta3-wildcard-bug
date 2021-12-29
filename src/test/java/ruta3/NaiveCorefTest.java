@@ -50,8 +50,11 @@ public class NaiveCorefTest {
         AnnotationIndex<Person> peopleIndex = inputJCas.getAnnotationIndex(Person.class);
         assertEquals("Size of AnnotationIndex<Person>", 3, peopleIndex.size());
 
-        // FIXME: This fails with Ruta 3.0.1 and Ruta 3.1.0
-        peopleIndex.stream().forEach(p -> assertNotNull(String.format("Person name of '%s' is null", p.getCoveredText()), p.getName()));
+        // FIXME: This fails with Ruta 3.0.1 and Ruta 3.1.0 (and Ruta 2.8.0 and 2.8.1)
+        // It works in Ruta 2.6.1 and 2.7.0
+        for (Person p: peopleIndex) {
+            assertNotNull(String.format("Person name of '%s' is null", p.getCoveredText()), p.getName());
+        }
     }
 
 }

@@ -1,7 +1,7 @@
 
 # ruta3-wildcard-bug
 
-This is a sample project to reproduce a likely bug with Ruta 3 wildcard matching condition (#).
+This is a sample project to reproduce a likely bug with Ruta 3 (and Ruta 2.8.x) wildcard matching condition (#).
 
 
 ## Description
@@ -13,6 +13,8 @@ t1:MyType.featX="foo" # t2:MyType.featX="_pending"{-> SETFEATURE("featX", t1.fea
 ```
 
 If there is other annotation of type `MyType` with `featX!="foo"` between t1 and t2, all feats captured in the `t1` variable are null.
+
+It works with Ruta 2.6.1 and 2.7.0.
 
 
 ## Steps to reproduce the problem
